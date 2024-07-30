@@ -39,8 +39,8 @@ export class FacebookStrategy<User> extends OAuth2Strategy<
   public name = FacebookStrategyName;
   private readonly scope: FacebookScope[];
   private readonly userInfoURL = 'https://graph.facebook.com/me';
-
   private readonly profileFields: FacebookProfileFields;
+  private readonly configID: string;
 
   constructor(
     {
@@ -48,6 +48,7 @@ export class FacebookStrategy<User> extends OAuth2Strategy<
       clientSecret,
       callbackURL,
       scope,
+      configID,
       extraProfileFields,
     }: FacebookStrategyOptions,
     verify: StrategyVerifyCallback<
@@ -66,6 +67,7 @@ export class FacebookStrategy<User> extends OAuth2Strategy<
       verify
     );
     this.scope = this.getScope(scope);
+    this.configID = configID;
     // Ensure unique entries in case they include the base fields
     this.profileFields = [
       ...new Set([...baseProfileFields, ...(extraProfileFields || [])]),
@@ -86,6 +88,7 @@ export class FacebookStrategy<User> extends OAuth2Strategy<
   protected authorizationParams(): URLSearchParams {
     const params = new URLSearchParams({
       scope: this.scope.join(FacebookStrategyScopeSeperator),
+      config_id: this.configID,
     });
 
     return params;

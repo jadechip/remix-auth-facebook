@@ -95,6 +95,7 @@ export type FacebookStrategyOptions = {
   clientID: string;
   clientSecret: string;
   callbackURL: string;
+  configID: string;
   /**
    * @default ["public_profile", "email"]
    *
