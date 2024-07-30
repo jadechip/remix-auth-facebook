@@ -95,7 +95,6 @@ export type FacebookStrategyOptions = {
   clientID: string;
   clientSecret: string;
   callbackURL: string;
-  configID: string;
   /**
    * @default ["public_profile", "email"]
    *
@@ -103,6 +102,7 @@ export type FacebookStrategyOptions = {
    * @see https://developers.facebook.com/docs/permissions/reference
    */
   scope?: FacebookScope[] | string;
+  configID: string;
   /**
    * Additional fields that will show up in the profile._json object
    *
