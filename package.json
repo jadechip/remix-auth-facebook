@@ -7,6 +7,7 @@
     "build": "tsc --project tsconfig.json",
     "watch": "tsc --project tsconfig.json --watch",
     "typecheck": "tsc --project tsconfig.json --noEmit",
+    "prepare": "npm run build",
     "prettier:check": "prettier --check '{src,test}/**/*.{ts,tsx}'",
     "prettier:apply": "prettier --write '{src,test}/**/*.{ts,tsx}'",
     "lint": "eslint --ext .ts,.tsx src/",
@@ -19,19 +20,9 @@
   },
   "author": "Emmanouil Konstantinidis",
   "homepage": "https://github.com/manosim/remix-auth-facebook#readme",
-  "keywords": [
-    "remix",
-    "remix-auth",
-    "auth",
-    "authentication",
-    "strategy"
-  ],
+  "keywords": ["remix", "remix-auth", "auth", "authentication", "strategy"],
   "license": "MIT",
-  "files": [
-    "build",
-    "package.json",
-    "README.md"
-  ],
+  "files": ["build", "package.json", "README.md"],
   "peerDependencies": {
     "@remix-run/server-runtime": "^1.5.1",
     "remix-auth": "^3.2.2"
