@@ -8,6 +8,7 @@
     "watch": "tsc --project tsconfig.json --watch",
     "typecheck": "tsc --project tsconfig.json --noEmit",
     "prepare": "npm run build",
+    "postinstall": "npm run build",
     "prettier:check": "prettier --check '{src,test}/**/*.{ts,tsx}'",
     "prettier:apply": "prettier --write '{src,test}/**/*.{ts,tsx}'",
     "lint": "eslint --ext .ts,.tsx src/",
@@ -16,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/manosim/remix-auth-facebook.git"
+    "url": "git+https://github.com/jadechip/remix-auth-facebook.git"
   },
   "author": "Emmanouil Konstantinidis",
   "homepage": "https://github.com/manosim/remix-auth-facebook#readme",
